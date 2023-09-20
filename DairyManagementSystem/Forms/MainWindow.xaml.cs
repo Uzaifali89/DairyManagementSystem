@@ -63,7 +63,7 @@ namespace DairyManagementSystem
             if (!string.IsNullOrEmpty(textEmail.Text) && !string.IsNullOrEmpty(textPassword.Text))
                 MessageBox.Show("Successfull login");
 
-            MilkCollectionWindow window = new MilkCollectionWindow();
+            Master window = new Master();
             window.Show();
         }
 

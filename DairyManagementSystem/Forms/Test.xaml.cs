@@ -17,9 +17,9 @@ namespace DairyManagementSystem.Forms
     /// <summary>
     /// Interaction logic for MilkCollectionWindow.xaml
     /// </summary>
-    public partial class MilkCollectionWindow : Window
+    public partial class Test : Window
     {
-        public MilkCollectionWindow()
+        public Test()
         {
             InitializeComponent();
         }
@@ -45,6 +45,11 @@ namespace DairyManagementSystem.Forms
                 isMaximized = true;
             }
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //Main.Content = new MilkCollectionReport();
         }
     }
 }
