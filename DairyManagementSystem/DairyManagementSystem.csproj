@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\code-branch.png" />
+    <None Remove="Images\cross.png" />
+    <None Remove="Images\DMS-logos_transparent.png" />
+    <None Remove="Images\facebook.png" />
+    <None Remove="Images\youtube.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="4.11.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\code-branch.png" />
+    <Resource Include="Images\cross.png" />
+    <Resource Include="Images\DMS-logos_transparent.png" />
+    <Resource Include="Images\facebook.png" />
+    <Resource Include="Images\youtube.png" />
+  </ItemGroup>
+
+</Project>
