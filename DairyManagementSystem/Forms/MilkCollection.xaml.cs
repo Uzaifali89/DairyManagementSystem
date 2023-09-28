@@ -24,5 +24,10 @@ namespace DairyManagementSystem.Forms
         {
             InitializeComponent();
         }
+
+        private void PhoneTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

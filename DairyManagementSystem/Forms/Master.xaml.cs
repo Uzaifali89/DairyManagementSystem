@@ -48,16 +48,18 @@ namespace DairyManagementSystem.Forms
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (sender is Button button)
-            { 
-            //{
-            //    if (button.Content.ToString() == "Milk Collection")
-            //        Main.Content = new MilkCollection();
+            Button button = (Button)sender; 
+            string keyValue = button.Tag as string;
 
-            //    if (button.Content.ToString() == "Report")
-                    Main.Content = new RateList();
-            }
-            
+            if (keyValue == "MilkCollection")
+                Main.Content = new MilkCollection();
+            else if (keyValue == "Reports")
+                Main.Content = new MilkCollectionReport();
+            else if (keyValue == "RateMaster")
+                Main.Content = new RateList();
+
         }
     }
 }
+
+

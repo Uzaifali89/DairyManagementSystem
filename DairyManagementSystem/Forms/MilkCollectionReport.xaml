@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
                xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:local="clr-namespace:DairyManagementSystem.Forms"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid >
@@ -65,11 +66,26 @@
                     <RowDefinition Height="auto"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <TextBlock Text="Shift" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="0"></TextBlock>
-                <ComboBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Style="{StaticResource TextBox}" Width="150" ></ComboBox>
 
-                <TextBlock Text="Customer" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="1"></TextBlock>
-                <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBox}" ></TextBox>
+                <ComboBox Grid.Column="0" Grid.Row="1" Width="200"
+                            HorizontalAlignment="Left"
+                        materialDesign:ComboBoxAssist.MaxLength="2"
+                        materialDesign:HintAssist.Hint="Shift"
+                        materialDesign:HintAssist.HintOpacity=".26"
+                        IsEditable="True">
+                    <ComboBoxItem
+                          Content="Morning" />
+                    <ComboBoxItem
+                          Content="Evening" />
+                    <ComboBoxItem
+                          Content="Night" />
+                </ComboBox>
+
+
+                <TextBox Grid.Row="1" Grid.Column="1" Width="170"
+                      x:Name="CLRTextBox"
+                      materialDesign:HintAssist.Hint="CLR">
+                </TextBox>
 
                 <TextBlock Text="Name" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="2"></TextBlock>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource normalText}" Foreground="#A569BD"
@@ -88,7 +104,7 @@
         <StackPanel Grid.Row="6" Orientation="Horizontal" Margin="0 10">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"></ColumnDefinition>
+                    <ColumnDefinition Width="220"></ColumnDefinition>
                     <ColumnDefinition Width="40"></ColumnDefinition>
                     <ColumnDefinition Width="40"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
@@ -98,48 +114,114 @@
                     <RowDefinition Height="auto"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <TextBlock Text="Period" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="0"></TextBlock>
-                <ComboBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Style="{StaticResource TextBox}" Width="150" ></ComboBox>
+                <!--<TextBlock Text="Period" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="0"></TextBlock>-->
+                <ComboBox Grid.Column="0" Grid.Row="1" Width="200"
+                            HorizontalAlignment="Left"
+                        materialDesign:ComboBoxAssist.MaxLength="2"
+                        materialDesign:HintAssist.Hint="Period"
+                        materialDesign:HintAssist.HintOpacity=".26"
+                        IsEditable="True">
+                    <ComboBoxItem
+                          Content="Morning" />
+                    <ComboBoxItem
+                          Content="Evening" />
+                    <ComboBoxItem
+                          Content="Night" />
+                </ComboBox>
 
-                <Button Style="{StaticResource TopButton}" Grid.Column="1" Grid.Row="1" Margin=" 0" Background="#dcdcdc" HorizontalAlignment="Right">
-                    <Icon:PackIconMaterial Kind="Magnify" Foreground="#7D3C98"></Icon:PackIconMaterial>
+                <Button Grid.Column="1" Grid.Row="1" Width="30" Height="30"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource=   {RelativeSource                              FindAncestor,           AncestorType=Window}}"
+                        Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                        ToolTip="MaterialDesignFloatingActionMiniButton">
+                    <materialDesign:PackIcon
+                        
+                        Kind="Magnify" />
                 </Button>
-                
-                <Button Style="{StaticResource TopButton}" Grid.Column="7" Grid.Row="1" Background="#dcdcdc" HorizontalAlignment="Right">
+
+                <!--<Button Style="{StaticResource TopButton}" Grid.Column="7" Grid.Row="1" Background="#dcdcdc" HorizontalAlignment="Right">
                     <Icon:PackIconMaterial Kind="Printer" Foreground="#7D3C98"></Icon:PackIconMaterial>
+                </Button>-->
+                <Button Grid.Column="2" Grid.Row="1" Width="30" Height="30"
+                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource=          {RelativeSource                                       FindAncestor,                    AncestorType=Window}}"
+                         Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                         ToolTip="MaterialDesignFloatingActionMiniButton">
+                    <materialDesign:PackIcon
+                         
+                         Kind="Printer" />
                 </Button>
-
 
             </Grid>
 
         </StackPanel>
         <!--Datagrid-->
-        <DataGrid x:Name="CollectionDataGrid" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" VerticalAlignment="Top" Grid.Row="7">
-            <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Id" IsReadOnly="True" >
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <Border Width="25" Height="25" CornerRadius="50" Margin="0 0 10 0" Background="Red">
-                                    <TextBlock Text="..." VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="0 0 0 1"></TextBlock>
 
-                                </Border>
-                                <TextBlock Text="..." VerticalAlignment="Center"></TextBlock>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn Header="Code" IsReadOnly="True" Width="auto"></DataGridTextColumn>
-                <DataGridTextColumn Header="Farmer Name" IsReadOnly="True" Width="auto"></DataGridTextColumn>
-                <DataGridTextColumn Header="Shift Name" IsReadOnly="True" Width="auto"></DataGridTextColumn>
-                <DataGridTextColumn Header="Date" IsReadOnly="True" Width="auto"></DataGridTextColumn>
-                <DataGridTextColumn Header="Milk quantity" IsReadOnly="True" Width="auto"></DataGridTextColumn>
-                <DataGridTextColumn Header="Fat" IsReadOnly="True" Width="auto"></DataGridTextColumn>
-                <DataGridTextColumn Header="SNF" IsReadOnly="True" Width="auto"></DataGridTextColumn>
-                <DataGridTextColumn Header="CLR" IsReadOnly="True" Width="auto"></DataGridTextColumn>
-                <DataGridTextColumn Header="Price" IsReadOnly="True" Width="auto"></DataGridTextColumn>
-                <DataGridTextColumn Header="Total Amount" IsReadOnly="True" Width="auto"></DataGridTextColumn>
-                <DataGridTextColumn Header="Location Name" IsReadOnly="True" Width="*"></DataGridTextColumn>
+        <DataGrid
+            Grid.Row="7" VerticalAlignment="Top"
+  AutoGenerateColumns="False"
+  CanUserAddRows="False"
+  HeadersVisibility="All"
+  ItemsSource="{Binding Items1}"
+  SelectionUnit="{Binding ElementName=selectionUnitComboBox, Path=SelectedValue}">
+            <DataGrid.Columns>
+                <!-- by default a DataGridCheckBoxColumn will have the MaterialDesignDataGridCheckBoxColumnStyle and MaterialDesignDataGridCheckBoxColumnEditingStyle applied. See DataGridAssist.ApplyMaterialDesignColumnStyles attached property -->
+                <DataGridCheckBoxColumn
+      Binding="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}">
+                    <DataGridCheckBoxColumn.Header>
+                        <Border
+          Background="Transparent">
+                            <CheckBox
+          />
+                        </Border>
+                    </DataGridCheckBoxColumn.Header>
+                    <DataGridCheckBoxColumn.HeaderStyle>
+                        <Style
+          TargetType="{x:Type DataGridColumnHeader}"
+          BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
+                            <Setter
+            Property="HorizontalContentAlignment"
+            Value="Center" />
+                        </Style>
+                    </DataGridCheckBoxColumn.HeaderStyle>
+                </DataGridCheckBoxColumn>
+                <!-- by default a DataGridTextColumn will have the MaterialDesignDataGridTextColumnStyle and MaterialDesignDataGridTextColumnEditingStyle applied. See DataGridAssist.ApplyMaterialDesignColumnStyles attached property -->
+
+                <DataGridTextColumn
+                                Binding="{Binding Code}"
+                                Header="Code" />
+                <DataGridTextColumn
+                                Binding="{Binding Code}"
+                                Header="Farmer Name" />
+                <DataGridTextColumn
+                                Binding="{Binding Code}"
+                                Header="Shift Name" />
+                <DataGridTextColumn
+                                Binding="{Binding Code}"
+                                Header="Date" />
+                <DataGridTextColumn
+                                Binding="{Binding Code}"
+                                Header="Milk Quantity" />
+                <DataGridTextColumn
+                                Binding="{Binding Code}"
+                                Header="Fat" />
+                <DataGridTextColumn
+                                Binding="{Binding Code}"
+                                Header="SNF" />
+                <DataGridTextColumn
+                                Binding="{Binding Code}"
+                                Header="CLR" />
+                <DataGridTextColumn
+                                Binding="{Binding Code}"
+                                Header="Price" />
+                <DataGridTextColumn
+                                Binding="{Binding Code}"
+                                Header="Total Amount" />
+                <DataGridTextColumn
+                                Binding="{Binding Code}"
+                                Header="Location Name" />
+
+
+                <!-- use custom combo box column to get better combos. Use ItemsSourceBinding as your binding template to be applied to each combo -->
+
             </DataGrid.Columns>
         </DataGrid>
 
@@ -153,7 +235,7 @@ HorizontalAlignment="Left" Margin="12 0" Text="60" FontSize="12"></TextBlock>
                 <TextBlock Text="Total Amount:" Style="{StaticResource FormText}"></TextBlock>
                 <TextBlock Style="{StaticResource normalText}" Foreground="#A569BD"
 HorizontalAlignment="Left" Margin="12 0" Text="60000" FontSize="12"></TextBlock>
-               
+
             </StackPanel>
         </Border>
     </Grid>

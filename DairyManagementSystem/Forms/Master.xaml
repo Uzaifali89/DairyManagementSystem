@@ -41,43 +41,44 @@
                                     <TextBlock Text="Dashboard"></TextBlock>
                                 </StackPanel>
                             </Button>
-                            <Button Style="{StaticResource MenuButton}">
+                            <Button Style="{StaticResource MenuButton}" Tag="MilkCollection" Click="Button_Click">
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="GlassMug" Style="{StaticResource MenuButtonIcon}"></Icon:PackIconMaterial>
                                     <TextBlock Text="Milk Collection"></TextBlock>
                                 </StackPanel>
                             </Button>
-                            <Button Style="{StaticResource MenuButton}" Click="Button_Click">
+                            <Button Style="{StaticResource MenuButton}" Tag="Sales">
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="Salesforce" Style="{StaticResource MenuButtonIcon}"></Icon:PackIconMaterial>
                                     <TextBlock Text="Sales"></TextBlock>
                                 </StackPanel>
                             </Button>
-                            <Button Style="{StaticResource MenuButton}">
+                            
+                            <Button Style="{StaticResource MenuButton}" Tag="Payment">
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="ContactlessPayment" Style="{StaticResource MenuButtonIcon}"></Icon:PackIconMaterial>
                                     <TextBlock Text="Payment"></TextBlock>
                                 </StackPanel>
                             </Button>
-                            <Button Style="{StaticResource MenuButton}">
+                            <Button Style="{StaticResource MenuButton}" Tag="Master">
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="ListStatus" Style="{StaticResource MenuButtonIcon}"></Icon:PackIconMaterial>
                                     <TextBlock Text="Master"></TextBlock>
                                 </StackPanel>
                             </Button>
-                            <Button Style="{StaticResource MenuButton}">
+                            <Button Style="{StaticResource MenuButton}" Click="Button_Click" Tag="Reports">
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="Note" Style="{StaticResource MenuButtonIcon}"></Icon:PackIconMaterial>
                                     <TextBlock Text="Reports"></TextBlock>
                                 </StackPanel>
                             </Button>
-                            <Button Style="{StaticResource MenuButton}">
+                            <Button Style="{StaticResource MenuButton}" Click="Button_Click" Tag="RateMaster">
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="CurrencyUsd" Style="{StaticResource MenuButtonIcon}"></Icon:PackIconMaterial>
                                     <TextBlock Text="Rate Master"></TextBlock>
                                 </StackPanel>
                             </Button>
-                            <Button Style="{StaticResource MenuButton}">
+                            <Button Style="{StaticResource MenuButton}" Tag="MilkSale">
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="GlassMug" Style="{StaticResource MenuButtonIcon}"></Icon:PackIconMaterial>
                                     <TextBlock Text="Milk Sale"></TextBlock>

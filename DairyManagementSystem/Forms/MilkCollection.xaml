@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-               xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:DairyManagementSystem.Forms"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
@@ -63,14 +64,53 @@
                     <RowDefinition Height="auto"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <TextBlock Text="Shift" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="0"></TextBlock>
-                <ComboBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Style="{StaticResource TextBox}" Width="150" ></ComboBox>
+                <!--<TextBlock Text="Shift" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="0"></TextBlock>-->
+                <ComboBox Grid.Column="0" Grid.Row="1" Width="150"
+                          HorizontalAlignment="Left"
+                 materialDesign:ComboBoxAssist.MaxLength="2"
+                 materialDesign:HintAssist.Hint="Shift"
+                 materialDesign:HintAssist.HintOpacity=".26"
+                 IsEditable="True">
+                    <ComboBoxItem
+                   Content="Morning" />
+                    <ComboBoxItem
+                   Content="Evening" />
+                    <ComboBoxItem
+                   Content="Night" />
+                </ComboBox>
+                <!--<ComboBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Style="{StaticResource TextBox}" Width="150" ></ComboBox>-->
 
-                <TextBlock Text="Date" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="1"></TextBlock>
-                <ComboBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Style="{StaticResource TextBox}" Width="150" ></ComboBox>
+                <!--<TextBlock Text="Date" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="1"></TextBlock>-->
+                <!--<ComboBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Style="{StaticResource TextBox}" Width="150" ></ComboBox>-->
+                <ComboBox Grid.Column="1" Grid.Row="1" Width="150"
+                          HorizontalAlignment="Left"
+                     materialDesign:ComboBoxAssist.MaxLength="2"
+                     materialDesign:HintAssist.Hint="Date"
+                     materialDesign:HintAssist.HintOpacity=".26"
+                     IsEditable="True">
+                    <ComboBoxItem
+                       Content="2023" />
+                    <ComboBoxItem
+                       Content="2022" />
+                    <ComboBoxItem
+                       Content="2021" />
+                </ComboBox>
 
-                <TextBlock Text="Route" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="2"></TextBlock>
-                <ComboBox Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Style="{StaticResource TextBox}" Width="150" ></ComboBox>
+                <!--<TextBlock Text="Route" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="2"></TextBlock>-->
+                <ComboBox Grid.Column="2" Grid.Row="1" Width="150"
+                           HorizontalAlignment="Left"
+                      materialDesign:ComboBoxAssist.MaxLength="2"
+                      materialDesign:HintAssist.Hint="Route"
+                      materialDesign:HintAssist.HintOpacity=".26"
+                      IsEditable="True">
+                    <ComboBoxItem
+                        Content="Route 1" />
+                    <ComboBoxItem
+                        Content="Route 2" />
+                    <ComboBoxItem
+                        Content="Route 3" />
+                </ComboBox>
+                <!--<ComboBox Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Style="{StaticResource TextBox}" Width="150" ></ComboBox>-->
 
 
 
@@ -94,11 +134,27 @@
                     <RowDefinition Height="auto"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <TextBlock Text="Shift" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="0"></TextBlock>
-                <ComboBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Style="{StaticResource TextBox}" Width="150" ></ComboBox>
+                <!--<TextBlock Text="Shift" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="0"></TextBlock>-->
+                <ComboBox Grid.Column="0" Grid.Row="1" Width="150"
+                       HorizontalAlignment="Left"
+                       materialDesign:ComboBoxAssist.MaxLength="2"
+                       materialDesign:HintAssist.Hint="Shift"
+                       materialDesign:HintAssist.HintOpacity=".26"
+                       IsEditable="True">
+                    <ComboBoxItem
+                         Content="Morning" />
+                    <ComboBoxItem
+                         Content="Evening" />
+                    <ComboBoxItem
+                         Content="Night" />
+                </ComboBox>
 
-                <TextBlock Text="Litre" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="1"></TextBlock>
-                <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBox}" ></TextBox>
+
+                <!--<TextBlock Text="Litre" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="1"></TextBlock>-->
+                <TextBox Grid.Row="1" Grid.Column="1"
+                    x:Name="NameTextBox"
+                    materialDesign:HintAssist.Hint="Litre">
+                </TextBox>
 
                 <TextBlock Text="Name" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="2"></TextBlock>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource normalText}" Foreground="#A569BD"
@@ -121,12 +177,12 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="120"></ColumnDefinition>
                     <ColumnDefinition Width="120"></ColumnDefinition>
-                    <ColumnDefinition Width="160"></ColumnDefinition>
+                    <ColumnDefinition Width="145"></ColumnDefinition>
                     <ColumnDefinition Width="120"></ColumnDefinition>
                     <ColumnDefinition Width="120"></ColumnDefinition>
-                    <ColumnDefinition Width="35"></ColumnDefinition>
-                    <ColumnDefinition Width="35"></ColumnDefinition>
-                    <ColumnDefinition Width="35"></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"></RowDefinition>
@@ -140,22 +196,65 @@
                 </Grid.RowDefinitions>
 
 
-                <TextBlock Text="Fat" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="0"></TextBlock>
-                <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBox}" ></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="0" Width="100"
+                    x:Name="FatTextBox"
+                    materialDesign:HintAssist.Hint="Fat">
+                </TextBox>
 
-                <TextBlock Text="CLR" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="1"></TextBlock>
-                <TextBox Grid.Row="1" Grid.Column="0" Style="{StaticResource TextBox}" ></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="1" Width="100"
+                       x:Name="CLRTextBox"
+                       materialDesign:HintAssist.Hint="CLR">
+                </TextBox>
 
-                <TextBlock Text="Type" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="2"></TextBlock>
-                <ComboBox Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Style="{StaticResource TextBox}" Width="150" ></ComboBox>
+                <ComboBox Grid.Column="2" Grid.Row="1" Width="140"
+          HorizontalAlignment="Left" Padding="0 5"
+          materialDesign:ComboBoxAssist.MaxLength="2"
+          materialDesign:HintAssist.Hint="Type"
+          materialDesign:HintAssist.HintOpacity=".26"
+          IsEditable="True">
+                    <ComboBoxItem
+            Content="Type 1" />
+                    <ComboBoxItem
+            Content="Type 2" />
+                    <ComboBoxItem
+            Content="Type 3" />
+                </ComboBox>
 
-                <TextBlock Text="Price/ltr" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="3"></TextBlock>
-                <TextBox Grid.Row="1" Grid.Column="3" Style="{StaticResource TextBox}" ></TextBox>
 
-                <TextBlock Text="Payment" Style="{StaticResource FormText}" Margin="12 0" Grid.Column="4"></TextBlock>
-                <TextBox Grid.Row="1" Grid.Column="4" Style="{StaticResource TextBox}" ></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="3" Width="100"
+                     x:Name="PriceTextBox"
+                     materialDesign:HintAssist.Hint="Price/Ltr">
+                </TextBox>
 
-                <Button Style="{StaticResource TopButton}" Grid.Column="5" Grid.Row="1" Margin=" 0" Background="#dcdcdc" HorizontalAlignment="Right">
+                <TextBox Grid.Row="1" Grid.Column="4" Width="100"
+                    x:Name="PaymentTextBox"
+                    materialDesign:HintAssist.Hint="Payment">
+                </TextBox>
+                <Button Grid.Column="5" Grid.Row="1" Width="30" Height="30"
+                       IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource=  {RelativeSource               FindAncestor,      AncestorType=Window}}"
+                       Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                       ToolTip="MaterialDesignFloatingActionMiniButton">
+                    <materialDesign:PackIcon
+    
+                    Kind="Plus" />
+                </Button>
+                <Button Grid.Column="6" Grid.Row="1" Width="30" Height="30"
+                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource=    {RelativeSource               FindAncestor,        AncestorType=Window}}"
+                         Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                         ToolTip="MaterialDesignFloatingActionMiniButton">
+                    <materialDesign:PackIcon
+  
+                       Kind="Recycle" />
+                </Button>
+                <Button Grid.Column="7" Grid.Row="1" Width="30" Height="30"
+                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource               FindAncestor,        AncestorType=Window}}"
+                     Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                     ToolTip="MaterialDesignFloatingActionMiniButton">
+                    <materialDesign:PackIcon
+  
+                     Kind="Trash" />
+                </Button>
+                <!--<Button Style="{StaticResource TopButton}" Grid.Column="5" Grid.Row="1" Margin=" 0" Background="#dcdcdc" HorizontalAlignment="Right">
                     <Icon:PackIconMaterial Kind="Plus" Foreground="#28B463"></Icon:PackIconMaterial>
                 </Button>
                 <Button Style="{StaticResource TopButton}" Grid.Column="6" Grid.Row="1" Background="#dcdcdc" HorizontalAlignment="Right">
@@ -163,14 +262,83 @@
                 </Button>
                 <Button Style="{StaticResource TopButton}" Grid.Column="7" Grid.Row="1" Background="#dcdcdc" HorizontalAlignment="Right">
                     <Icon:PackIconMaterial Kind="Delete" Foreground="#F1948A"></Icon:PackIconMaterial>
-                </Button>
+                </Button>-->
 
 
             </Grid>
 
         </StackPanel>
         <!--Datagrid-->
-        <DataGrid x:Name="CollectionDataGrid" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" VerticalAlignment="Top" Grid.Row="7">
+        <DataGrid
+            Grid.Row="7" VerticalAlignment="Top"
+  AutoGenerateColumns="False"
+  CanUserAddRows="False"
+  HeadersVisibility="All"
+  ItemsSource="{Binding Items1}"
+  SelectionUnit="{Binding ElementName=selectionUnitComboBox, Path=SelectedValue}">
+            <DataGrid.Columns>
+                <!-- by default a DataGridCheckBoxColumn will have the MaterialDesignDataGridCheckBoxColumnStyle and MaterialDesignDataGridCheckBoxColumnEditingStyle applied. See DataGridAssist.ApplyMaterialDesignColumnStyles attached property -->
+                <DataGridCheckBoxColumn
+      Binding="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}">
+                    <DataGridCheckBoxColumn.Header>
+                        <Border
+          Background="Transparent">
+                            <CheckBox
+          />
+                        </Border>
+                    </DataGridCheckBoxColumn.Header>
+                    <DataGridCheckBoxColumn.HeaderStyle>
+                        <Style
+          TargetType="{x:Type DataGridColumnHeader}"
+          BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
+                            <Setter
+            Property="HorizontalContentAlignment"
+            Value="Center" />
+                        </Style>
+                    </DataGridCheckBoxColumn.HeaderStyle>
+                </DataGridCheckBoxColumn>
+                <!-- by default a DataGridTextColumn will have the MaterialDesignDataGridTextColumnStyle and MaterialDesignDataGridTextColumnEditingStyle applied. See DataGridAssist.ApplyMaterialDesignColumnStyles attached property -->
+
+                <DataGridTextColumn
+                             Binding="{Binding Code}"
+                             Header="Code" />
+                <DataGridTextColumn
+                             Binding="{Binding Code}"
+                             Header="Farmer Name" />
+                <DataGridTextColumn
+                             Binding="{Binding Code}"
+                             Header="Shift Name" />
+                <DataGridTextColumn
+                             Binding="{Binding Code}"
+                             Header="Date" />
+                <DataGridTextColumn
+                             Binding="{Binding Code}"
+                             Header="Milk Quantity" />
+                <DataGridTextColumn
+                             Binding="{Binding Code}"
+                             Header="Fat" />
+                <DataGridTextColumn
+                             Binding="{Binding Code}"
+                             Header="SNF" />
+                <DataGridTextColumn
+                             Binding="{Binding Code}"
+                             Header="CLR" />
+                <DataGridTextColumn
+                             Binding="{Binding Code}"
+                             Header="Price" />
+                <DataGridTextColumn
+                             Binding="{Binding Code}"
+                             Header="Total Amount" />
+                <DataGridTextColumn
+                             Binding="{Binding Code}"
+                             Header="Location Name" />
+
+
+                <!-- use custom combo box column to get better combos. Use ItemsSourceBinding as your binding template to be applied to each combo -->
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <!--<DataGrid x:Name="CollectionDataGrid" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" VerticalAlignment="Top" Grid.Row="7">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Id" IsReadOnly="True" >
                     <DataGridTemplateColumn.CellTemplate>
@@ -197,7 +365,7 @@
                 <DataGridTextColumn Header="Total Amount" IsReadOnly="True" Width="auto"></DataGridTextColumn>
                 <DataGridTextColumn Header="Location Name" IsReadOnly="True" Width="*"></DataGridTextColumn>
             </DataGrid.Columns>
-        </DataGrid>
+        </DataGrid>-->
 
         <!--Pagination-->
         <Border Grid.Row="8" HorizontalAlignment="Right" VerticalAlignment="Bottom" BorderBrush="#dee4ec" BorderThickness="1" 
