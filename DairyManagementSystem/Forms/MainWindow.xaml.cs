@@ -65,6 +65,7 @@ namespace DairyManagementSystem
 
             Master window = new Master();
             window.Show();
+            this.Close();
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)

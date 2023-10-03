@@ -29,4 +29,8 @@
     <Resource Include="Images\youtube.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
