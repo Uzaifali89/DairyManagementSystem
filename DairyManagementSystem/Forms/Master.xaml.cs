@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DMS.Services.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,11 @@ namespace DairyManagementSystem.Forms
     /// </summary>
     public partial class Master : Window
     {
-        public Master()
+        private readonly MilkCollection _milkCollectionForm;
+        public Master(MilkCollection milkCollectionForm)
         {
             InitializeComponent();
+            _milkCollectionForm = milkCollectionForm;
         }
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -47,8 +50,8 @@ namespace DairyManagementSystem.Forms
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Button button = (Button)sender; 
+        { 
+           Button button = (Button)sender; 
             string keyValue = button.Tag as string;
 
             if (keyValue == "MilkCollection")

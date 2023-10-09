@@ -19,6 +19,15 @@
   <ItemGroup>
     <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="4.11.0" />
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="D:\Uzaif\DMSAPP\Postgres\DMS.Postgres.csproj" />
+    <ProjectReference Include="D:\Uzaif\DMSAPP\Services\DMS.Services.csproj" />
+    <ProjectReference Include="D:\Uzaif\DMSAPP\SQL\DMS.SQL.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,10 +36,6 @@
     <Resource Include="Images\DMS-logos_transparent.png" />
     <Resource Include="Images\facebook.png" />
     <Resource Include="Images\youtube.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>
