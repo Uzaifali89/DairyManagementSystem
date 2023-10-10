@@ -20,11 +20,9 @@ namespace DairyManagementSystem.Forms
     /// </summary>
     public partial class Master : Window
     {
-        private readonly MilkCollection _milkCollectionForm;
-        public Master(MilkCollection milkCollectionForm)
+        public Master()
         {
             InitializeComponent();
-            _milkCollectionForm = milkCollectionForm;
         }
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
